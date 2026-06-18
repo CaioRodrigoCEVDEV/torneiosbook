@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "db:migrate": "prisma migrate deploy",
+    "predev": "npm run db:migrate",
+    "prestart": "npm run db:migrate",
     "dev": "node ./scripts/next-with-port.mjs dev",
     "build": "next build",
     "start": "node ./scripts/next-with-port.mjs start",
