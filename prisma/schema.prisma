@@ -1,0 +1,94 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum TournamentStatus {
+  SETUP
+  LEAGUE
+  KNOCKOUT
+  FINISHED
+}
+
+enum TournamentFormat {
+  LEAGUE_TOP4_KNOCKOUT
+}
+
+enum MatchPhase {
+  LEAGUE
+  SEMIFINAL
+  FINAL
+  THIRD_PLACE
+}
+
+enum MatchStatus {
+  PENDING
+  FINISHED
+}
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Tournament {
+  id        String           @id @default(cuid())
+  name      String
+  game      String
+  format    TournamentFormat @default(LEAGUE_TOP4_KNOCKOUT)
+  status    TournamentStatus @default(SETUP)
+  isPublic  Boolean          @default(true)
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+
+  players   Player[]
+  matches   Match[]
+}
+
+model Player {
+  id           String      @id @default(cuid())
+  tournamentId String
+  tournament   Tournament  @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+  name         String
+  nickname     String?
+  team         String
+  platform     String?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  homeMatches  Match[]     @relation("HomePlayer")
+  awayMatches  Match[]     @relation("AwayPlayer")
+  wonMatches   Match[]     @relation("WinnerPlayer")
+}
+
+model Match {
+  id                String      @id @default(cuid())
+  tournamentId      String
+  tournament        Tournament  @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+  round             Int?
+  phase             MatchPhase
+  homePlayerId      String
+  homePlayer        Player      @relation("HomePlayer", fields: [homePlayerId], references: [id], onDelete: Cascade)
+  awayPlayerId      String
+  awayPlayer        Player      @relation("AwayPlayer", fields: [awayPlayerId], references: [id], onDelete: Cascade)
+  homeScore         Int?
+  awayScore         Int?
+  status            MatchStatus @default(PENDING)
+  winnerPlayerId    String?
+  winnerPlayer      Player?     @relation("WinnerPlayer", fields: [winnerPlayerId], references: [id], onDelete: SetNull)
+  decidedByPenalties Boolean     @default(false)
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
+
+  @@index([tournamentId, phase])
+  @@index([tournamentId, round])
+  @@index([tournamentId, status])
+}
