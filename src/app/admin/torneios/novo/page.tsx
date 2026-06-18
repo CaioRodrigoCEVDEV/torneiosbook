@@ -30,7 +30,7 @@ export default async function NewTournamentPage({ searchParams }: { searchParams
           <form action={createTournamentAction} className="space-y-4">
             <label className="block space-y-2">
               <span className="arena-label">Nome do torneio</span>
-              <input name="name" className="arena-input" placeholder="Arena FC Summer Cup" />
+              <input name="name" className="arena-input" placeholder="Copa de Verão" />
             </label>
 
             <label className="block space-y-2">

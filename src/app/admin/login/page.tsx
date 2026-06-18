@@ -32,7 +32,7 @@ export default async function AdminLoginPage({ searchParams }: { searchParams?: 
 
             <label className="block space-y-2">
               <span className="arena-label">E-mail</span>
-              <input name="email" type="email" autoComplete="email" className="arena-input" placeholder="admin@arenafc.local" />
+              <input name="email" type="email" autoComplete="email" className="arena-input" placeholder="admin@torneios.local" />
             </label>
 
             <label className="block space-y-2">

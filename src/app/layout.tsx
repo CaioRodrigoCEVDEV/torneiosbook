@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Arena FC",
-    template: "%s | Arena FC",
+    default: "Torneios",
+    template: "%s | Torneios",
   },
   description: "Organize campeonatos de EA FC com seus amigos.",
 };

@@ -97,7 +97,7 @@ export default async function TournamentKnockoutPage({ params }: { params: PageP
                 <MatchSummaryCard
                   match={finalMatch}
                   title="Final"
-                  subtitle="Valendo o título da Arena FC"
+                  subtitle="Valendo o título de Torneios"
                   homePlayer={playersById[finalMatch.homePlayerId]}
                   awayPlayer={playersById[finalMatch.awayPlayerId]}
                   className="border-amber-200"

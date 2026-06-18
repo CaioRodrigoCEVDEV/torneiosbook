@@ -48,7 +48,7 @@ export function KnockoutBracket({ semifinals, finalMatch, champion, playersById,
             key={`${finalMatch.id}-${finalMatch.homeScore ?? "n"}-${finalMatch.awayScore ?? "n"}-${finalMatch.winnerPlayerId ?? "n"}-${finalMatch.status}`}
             match={finalMatch}
             title="Final"
-            subtitle="Valendo o título da Arena FC"
+            subtitle="Valendo o título de Torneios"
             homePlayer={playersById[finalMatch.homePlayerId]}
             awayPlayer={playersById[finalMatch.awayPlayerId]}
             onSave={(payload) => onSaveMatch(finalMatch, payload)}

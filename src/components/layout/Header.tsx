@@ -21,11 +21,11 @@ export function Header() {
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
         <Link href="/" className="flex items-center gap-3">
           <span className="grid size-11 place-items-center rounded-2xl bg-gradient-to-br from-emerald-400 via-cyan-400 to-blue-600 text-sm font-black text-slate-950 shadow-lg shadow-emerald-500/20">
-            AF
+            T
           </span>
 
           <div>
-            <div className="text-lg font-black tracking-wide text-white">Arena FC</div>
+            <div className="text-lg font-black tracking-wide text-white">Torneios</div>
             <div className="text-xs text-zinc-400">MVP local</div>
           </div>
         </Link>

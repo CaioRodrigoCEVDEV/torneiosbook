@@ -30,9 +30,9 @@ export function PublicHeader() {
     <header className="border-b border-slate-200 bg-white/90 backdrop-blur">
       <div className="arena-page flex items-center justify-between py-4">
         <Link href="/" className="flex items-center gap-3">
-          <span className="grid size-10 place-items-center rounded-md bg-emerald-700 text-sm font-semibold text-white">AF</span>
+          <span className="grid size-10 place-items-center rounded-md bg-emerald-700 text-sm font-semibold text-white">T</span>
           <div>
-            <div className="text-sm font-semibold text-slate-900">Arena FC</div>
+            <div className="text-sm font-semibold text-slate-900">Torneios</div>
             <div className="text-xs text-slate-500">Campeonatos de EA FC</div>
           </div>
         </Link>

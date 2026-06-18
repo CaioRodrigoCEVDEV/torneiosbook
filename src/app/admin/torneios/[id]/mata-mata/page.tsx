@@ -112,7 +112,7 @@ export default async function AdminTournamentKnockoutPage({ params }: { params: 
                 <KnockoutMatchFormCard
                   match={finalMatch}
                   title="Final"
-                  subtitle="Valendo o título da Arena FC"
+                  subtitle="Valendo o título de Torneios"
                   tournamentId={tournament.id}
                   homePlayer={playersById[finalMatch.homePlayerId]}
                   awayPlayer={playersById[finalMatch.awayPlayerId]}

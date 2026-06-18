@@ -23,7 +23,7 @@ export default async function Home() {
 
             <div className="space-y-3">
               <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
-                Arena FC
+                Torneios
               </h1>
               <p className="max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
                 Campeonatos de EA FC com tabela automática, mata-mata simples e visual claro para acompanhar cada rodada.
